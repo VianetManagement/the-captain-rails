@@ -13,8 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   = "The Captain will tell, talk, and taddle on those pesky fraudulent scalliwags."
   spec.homepage      = "https://github.com/VianetManagement/the-captain-rails"
   spec.license       = "MIT"
-
-  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  spec.files         = Dir["README.md", "{app,config,lib}/**/*"]
 
   spec.add_development_dependency "rails",       "~> 5.0"
   spec.add_development_dependency "rake",        "~> 11.3"

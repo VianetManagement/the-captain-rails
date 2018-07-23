@@ -5,7 +5,8 @@ module TheCaptain
     class << self
       attr_accessor :adapter, :backend, :namespace, :event_filter
 
-      def subscribe_events
+      def configure
+        raise StandardError, "Must provide a block to configure events" unless block_given?
         yield self
       end
 
@@ -14,7 +15,12 @@ module TheCaptain
       end
 
       def all(callable = Proc.new)
-        subscribe nil, callable
+        subscribe(nil, callable)
+      end
+
+      def instrument(event)
+        event = event_filter.call(event)
+        backend.instrument(namespace.call(event.type), event) if event
       end
 
       def listening?(name)
