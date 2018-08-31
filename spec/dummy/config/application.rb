@@ -2,7 +2,6 @@
 
 require_relative "boot"
 
-require "rails"
 # Pick the frameworks you want:
 require "action_controller/railtie"
 
