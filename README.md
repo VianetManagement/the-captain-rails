@@ -1,11 +1,11 @@
 # TheCaptain Rails
-TODO: Add more description
-
 The gist is that this is housing Rail's specific logic for handling Captain responses and submissions in a Rails project.
 
-Main core feature is the ability to subscribe / explicitly listen for Webhooks that a developer would like to handel in a specific manner.
+Main core feature is the ability to subscribe / explicitly listen for Webhooks that a developer would like to Handel in a specific manner.
 
-IE: If a Webhook comes back for an IP or Content analysis. A developer may want to allow specific class handlers to manage / analise these pieces of information differently and directed to other parts of the application.
+I.E. If a Webhook comes back for an IP or Content analysis. A developer may want to allow specific class handlers to manage / analyze these pieces of information differently and directed to other parts of the application. 
+
+(AKA: Single Responsibility Rule)
 
 ## Usage
 
@@ -15,16 +15,6 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'the_captain_rails', git: "https://github.com/VianetManagement/the-captain-rails"
-```
-
-And then execute:
-```bash
-$ bundle
-```
-
-Or install it yourself as:
-```bash
-$ gem install the_captain_rails
 ```
 
 
@@ -57,7 +47,7 @@ TheCaptain::Event.configure do |config|
   # Alternatively you can also define a class that contains a `call/1` method
    config.subscribe("Account Abuse", AccountManagment::Abuse.new)
    
-   # If you wish for all events to pass through a single entry point or you wanna log something about any webhook 
+   # If you wish for all events to pass through a single entry point or you want to log something about any webhook 
    # passthrough
    config.all { |event| ... }
    
@@ -85,7 +75,7 @@ You can also reject or accept events by modifying the `.event_filter/1`
 
 ```ruby
 TheCaptain::Event.configure do |config|
-  # If the event's decision id is 1000, then ignore it (ie: don't return the event)
+  # If the event's decision id is 1000, then ignore it (i.e.: don't return the event)
   config.event_filter = proc { |event| event unless event.descition.id == 1000 }
 end
 ```
