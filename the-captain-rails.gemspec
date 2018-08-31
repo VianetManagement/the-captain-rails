@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/VianetManagement/the-captain-rails"
   spec.license       = "MIT"
 
-  spec.files         = Dir["README.md", "{app,config,lib}/**/*"]
+  spec.files         = Dir["{app,config,lib}/**/*.rb", "README.md"]
   spec.require_paths = ["lib", "app", "config"]
 
   spec.add_development_dependency "rails",       "~> 5.0"
