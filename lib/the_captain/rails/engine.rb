@@ -8,7 +8,7 @@ module TheCaptain
       isolate_namespace TheCaptain::Events
 
       initializer "the_captain_rails.initialize" do
-        require "the_captain/rails"
+        require "the_captain_rails"
       end
     end
   end
