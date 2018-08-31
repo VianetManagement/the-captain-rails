@@ -15,4 +15,18 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  # Clear out conflicting notifiers after each test.
+  config.before do
+    @event_filter     = TheCaptain::Events.event_filter
+    @event_key_filter = TheCaptain::Events.event_key_filter
+    @notifier         = TheCaptain::Events.backend.notifier
+    TheCaptain::Events.backend.notifier = @notifier.class.new
+  end
+
+  config.after do
+    TheCaptain::Events.event_filter     = @event_filter
+    TheCaptain::Events.event_key_filter = @event_key_filter
+    TheCaptain::Events.backend.notifier = @notifier
+  end
 end
