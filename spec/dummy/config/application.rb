@@ -16,7 +16,7 @@ require "action_controller/railtie"
 # require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
-require "the_captain/rails"
+require "the_captain_rails"
 
 module Dummy
   class Application < Rails::Application
