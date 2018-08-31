@@ -1,0 +1,10 @@
+{
+  "decision":{
+    "reason":"This user sent a dirty message.",
+    "kit":"Content Abuse",
+    "id":"1013"
+  },
+  "uuid":"11111111111",
+  "entity": {"type":"user", "id":796},
+  "timestamp":"1535726188253"
+}

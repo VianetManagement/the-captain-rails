@@ -1,0 +1,10 @@
+{
+  "decision":{
+    "reason":"This user is related to another user with the same ip address.",
+    "kit":"Account Abuse",
+    "id":"1000"
+  },
+  "uuid":"2222222222",
+  "entity": {"type":"user","id":796},
+  "timestamp":"1535726188253"
+}
