@@ -14,6 +14,7 @@ I.E. If a Webhook comes back for an IP or Content analysis. A developer may want
 Add this line to your application's Gemfile:
 
 ```ruby
+gem "the_captain", git: "https://github.com/VianetManagement/the-captain-ruby.git", branch: "3.0.0"
 gem 'the_captain_rails', git: "https://github.com/VianetManagement/the-captain-rails"
 ```
 
