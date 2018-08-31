@@ -33,7 +33,7 @@ module TheCaptain
 
     Namespace = Struct.new(:value, :delimiter) do
       def call(name = nil)
-        "#{value}#{delimiter}#{name&.tr(' ', delimiter)&.downcase}"
+        "#{value}#{delimiter}#{name&.to_s&.tr(' ', delimiter)&.downcase}"
       end
 
       def to_regexp(name = nil)
