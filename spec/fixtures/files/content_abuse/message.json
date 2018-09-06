@@ -1,4 +1,5 @@
 {
+  "action": "user:suspend",
   "decision":{
     "reason":"This user sent a dirty message.",
     "kit":"Content Abuse",

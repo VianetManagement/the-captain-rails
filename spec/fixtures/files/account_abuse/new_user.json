@@ -1,4 +1,5 @@
 {
+  "action": "user:flagged",
   "decision":{
     "reason":"This user is related to another user with the same ip address.",
     "kit":"Account Abuse",

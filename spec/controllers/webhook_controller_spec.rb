@@ -17,7 +17,7 @@ module TheCaptain
 
         context "when a subscribed event is triggered" do
           before do
-            TheCaptain::Events.subscribe("Account Abuse") { |event| @results = event.uuid }
+            TheCaptain::Events.subscribe("user:flagged") { |event| @results = event.uuid }
           end
 
           it "triggers the event that was subscribed to" do

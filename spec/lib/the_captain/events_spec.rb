@@ -17,14 +17,14 @@ RSpec.describe TheCaptain::Events do
     context "when used for subscribing to events" do
       before do
         described_class.configure do |event|
-          event.subscribe("Account Abuse") { |_event| }
-          event.subscribe("Content Abuse") { |_event| }
+          event.subscribe("user:flagged") { |_event| }
+          event.subscribe("user:suspended") { |_event| }
         end
       end
 
-      it { is_expected.to be_listening("Account Abuse") }
-      it { is_expected.to be_listening("Content Abuse") }
-      it { is_expected.not_to be_listening("Random Act") }
+      it { is_expected.to be_listening("user:flagged") }
+      it { is_expected.to be_listening("user:suspended") }
+      it { is_expected.not_to be_listening("user:banned") }
     end
   end
 
@@ -38,7 +38,7 @@ RSpec.describe TheCaptain::Events do
 
     it "Can accept a Proc as its yield'er" do
       count = 0
-      described_class.subscribe("Account Abuse", proc { |_| count = 22 })
+      described_class.subscribe("user:flagged", proc { |_| count = 22 })
       expect { described_class.instrument(account_abuse_event) }.to change { count }.from(0).to(22)
     end
 
@@ -46,7 +46,7 @@ RSpec.describe TheCaptain::Events do
       klass_instance = account_abuse_klass.new
       allow(klass_instance).to receive(:call).with(account_abuse_event)
 
-      described_class.subscribe("Account Abuse", klass_instance)
+      described_class.subscribe("user:flagged", klass_instance)
       described_class.instrument(account_abuse_event)
 
       expect(klass_instance).to have_received(:call).with(account_abuse_event)
@@ -54,10 +54,10 @@ RSpec.describe TheCaptain::Events do
   end
 
   describe ".listening?" do
-    before { described_class.subscribe("Account Abuse") { |_| } }
+    before { described_class.subscribe("user:flagged") { |_| } }
 
     it "Returns a truthy value when a valid subscription is set" do
-      expect(described_class).to be_listening("Account Abuse")
+      expect(described_class).to be_listening("user:flagged")
     end
 
     it "Does not listen to all by default" do

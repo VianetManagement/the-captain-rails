@@ -56,6 +56,6 @@ module TheCaptain
     self.backend          = ActiveSupport::Notifications
     self.namespace        = Namespace.new("captain_event", ".")
     self.event_filter     = lambda { |event| event }
-    self.event_key_filter = lambda { |event| event.dig(:decision, :kit) }
+    self.event_key_filter = lambda { |event| event.dig(:action) }
   end
 end

@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = Dir["{app,config,lib}/**/*.rb", "README.md"]
-  spec.require_paths = ["lib", "app", "config"]
+  spec.require_paths = %w[lib app config]
 
   spec.add_development_dependency "rails",       "~> 5.0"
   spec.add_development_dependency "rake",        "~> 11.3"
