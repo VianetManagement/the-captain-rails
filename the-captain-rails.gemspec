@@ -17,6 +17,7 @@ Gem::Specification.new do |spec|
   spec.files         = Dir["{app,config,lib}/**/*.rb", "README.md"]
   spec.require_paths = %w[lib app config]
 
+  spec.add_dependency "the_captain", "~> 3.0"
   spec.add_development_dependency "rails",       "~> 5.0"
   spec.add_development_dependency "rake",        "~> 11.3"
   spec.add_development_dependency "rspec-rails", "~> 3.5"
