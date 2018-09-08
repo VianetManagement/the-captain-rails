@@ -14,8 +14,7 @@ I.E. If a Webhook comes back for an IP or Content analysis. A developer may want
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "the_captain", git: "https://github.com/VianetManagement/the-captain-ruby.git", branch: "3.0.0"
-gem 'the_captain_rails', git: "https://github.com/VianetManagement/the-captain-rails"
+gem "the_captain_rails"
 ```
 
 
@@ -43,10 +42,10 @@ Your webhook endpoint will look something like `http://[HOST]/captain/events`
 
 ```ruby
 TheCaptain::Event.configure do |config|
-  config.subscribe("Account Abuse") { |event| ... }
+  config.subscribe("user:suspended") { |event| ... }
   
   # Alternatively you can also define a class that contains a `call/1` method
-   config.subscribe("Account Abuse", AccountManagment::Abuse.new)
+   config.subscribe("user:suspended", AccountManagment::Abuse.new)
    
    # If you wish for all events to pass through a single entry point or you want to log something about any webhook 
    # passthrough
