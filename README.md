@@ -1,7 +1,7 @@
 # TheCaptain Rails
 The gist is that this is housing Rail's specific logic for handling Captain responses and submissions in a Rails project.
 
-Main core feature is the ability to subscribe / explicitly listen for Webhooks that a developer would like to Handel in a specific manner.
+Main core feature is the ability to subscribe / explicitly listen for Webhooks that a developer would like to handle in a specific manner.
 
 I.E. If a Webhook comes back for an IP or Content analysis. A developer may want to allow specific class handlers to manage / analyze these pieces of information differently and directed to other parts of the application. 
 
