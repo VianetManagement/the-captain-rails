@@ -76,7 +76,7 @@ You can also reject or accept events by modifying the `.event_filter/1`
 ```ruby
 TheCaptain::Event.configure do |config|
   # If the event's decision id is 1000, then ignore it (i.e.: don't return the event)
-  config.event_filter = proc { |event| event unless event.descition.id == 1000 }
+  config.event_filter = proc { |event| event unless event.decision.id == 1000 }
 end
 ```
 
