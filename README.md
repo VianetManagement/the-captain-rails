@@ -24,7 +24,7 @@ gem "the_captain_rails"
 
 #### Configuring The Rails Router Path
 
-Ensure we mount the controller path to handel requests.
+Ensure we mount the controller path to handle requests.
 
 `/config/routes.rb`
 ```ruby
